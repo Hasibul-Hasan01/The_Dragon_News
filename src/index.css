@@ -8,8 +8,8 @@
   default: true;
   --color-primary: #151515;
   --color-secondary: #D72050;
-  --color-base-01: #F3F3F3;
-  --color-base-02: #E7E7E7;
+  --color-base-200: #F3F3F3;
+  --color-base-300: #E7E7E7;
 };
 
 *{

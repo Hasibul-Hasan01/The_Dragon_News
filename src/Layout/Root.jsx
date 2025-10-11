@@ -3,9 +3,9 @@ import Header from '../Components/Header/Header';
 
 const Root = () => {
     return (
-        <div>
+        <div className='w-10/12 mx-auto'>
             <Header />
-            <Outlet></Outlet>
+            <Outlet />
         </div>
     );
 };
