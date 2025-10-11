@@ -1,4 +1,5 @@
 import LatestNews from "../../Components/LatestNews/LatestNEws";
+import Navbar from "../../Components/Navbar/Navbar";
 import Hero from "./Section/Hero";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             <section className="">
                 <LatestNews />
+                <Navbar />
             </section>
             <div>
                 <section className="left-nav"></section>
