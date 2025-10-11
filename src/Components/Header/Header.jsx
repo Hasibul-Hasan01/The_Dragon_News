@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import logo from '../../assets/images/logo.png';
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
                 <img src={logo} alt="logo" />
             </section>
             <p className="text-center">Journalism Without Fear or Favour</p>
-            <p className="text-center">Sunday, November 27, 2025</p>
+            <p className="text-center">{format(new Date(), "EEEE, MMMM QQ, yyyy")}</p>
         </div>
     );
 };
