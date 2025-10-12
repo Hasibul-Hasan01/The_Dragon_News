@@ -9,10 +9,16 @@ const Home = () => {
                 <LatestNews />
                 <Navbar />
             </section>
-            <div>
-                <section className="left-nav"></section>
-                <section className="post-area"></section>
-                <section className="right-nav"></section>
+            <div className="grid grid-cols-12 py-4">
+                <section className="left-nav col-span-3">
+                    <h1 className="font-bold">All Caterogy</h1>
+                </section>
+                <section className="post-area col-span-6">
+                    <h1 className="font-bold">Dragon News Home</h1>
+                </section>
+                <section className="right-nav col-span-3">
+                    <h1 className="font-bold">Login With</h1>
+                </section>
             </div>
         </div>
     );
