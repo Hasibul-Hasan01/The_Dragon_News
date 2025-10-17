@@ -1,17 +1,18 @@
-import { Suspense, use } from "react";
+import { use } from "react";
 import { NavLink } from "react-router";
 
-const categoryPromise = fetch('/public/data/Categories.json').then((res) => res.json());
+const categoryNews = fetch("/categories.json").then((res) => res.json());
 
 const CategoriesBtn = () => {
-    const CategoriesBtn = use(categoryPromise);
+    const categoryBtn = use(categoryNews);
+    // console.log(categoryBtn);
     return (
-        <div className="grid py-5">
-            <Suspense fallback={'loading loading-ring loading-xl'}>
+        <div>
+            <section className="py-5">
                 {
-                    CategoriesBtn.map( category => <NavLink className="btn w-full mb-1" key={category.id}  to={`/category/${category.id}`}>{category.name}</NavLink>)
+                    categoryBtn.map(category => <NavLink className={"grid btn mb-1"} category={category} key={category.id} to={`/category/${category.id}`} >{category.name}</NavLink>)
                 }
-            </Suspense>
+            </section>
         </div>
     );
 };

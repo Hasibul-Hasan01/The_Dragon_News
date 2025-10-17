@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router';
 import Header from '../Components/Header/Header';
 import LatestNews from '../Components/LatestNews/LatestNEws';
-import CategoriesBtn from '../Components/CategoriesBtn/CategoriesBtn';
 import SocialLog from '../Components/Auth/SocialLog/SocialLog';
 import Navbar from '../Components/Navbar/Navbar';
 import SocialMedia from '../Components/SocialMedia/SocialMedia';
+import CategoriesBtn from '../Components/CategoriesBtn/CategoriesBtn';
 
 const Root = () => {
     return (

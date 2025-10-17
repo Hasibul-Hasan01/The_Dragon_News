@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import NewsCard from '../../Components/NewsCard/NewsCard';
 
 const CategoryBlog = () => {
     const { id } = useParams();
-    const data = useLoaderData();
-    const [categoryNews, setCategoryNews] = useState();
+    const loadData = useLoaderData();
+    const [categoryNews, setCategoryNews] = useState([])
 
-    useEffect(() => {
-        const filterCategoryNews = data.filter((news) => news.category_id == id)
-        setCategoryNews(filterCategoryNews);
-    }, [id, data])
+    console.log('category Id:', id, 'Data Load', loadData );
+
+    useEffect( () => {
+        const filterCategory = loadData.filter( news => news.category_id == id);
+        // console.log('single category news', filterCategory);
+        setCategoryNews(filterCategory);
+    }, [id, loadData])
+
+
     return (
-        <div className='py-5'>
-            <h1>Category CategoryBlog. {id}</h1>
+        <div>
+            <h1>News Id {id}</h1>
             <section>
                 {
                     categoryNews.map( news => <NewsCard key={news.id} news={news} />)
