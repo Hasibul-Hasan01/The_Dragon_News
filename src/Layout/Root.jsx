@@ -6,6 +6,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import SocialMedia from '../Components/SocialMedia/SocialMedia';
 import CategoriesBtn from '../Components/CategoriesBtn/CategoriesBtn';
 import QZone from '../Components/QZone/QZone';
+import BackgroundImg from '../Components/BackgroundImg/BackgroundImg';
 
 
 const Root = () => {
@@ -30,6 +31,7 @@ const Root = () => {
                     <SocialLog />
                     <SocialMedia />
                     <QZone />
+                    <BackgroundImg />
                 </section>
             </div>
         </div>
