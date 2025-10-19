@@ -7,21 +7,36 @@ const CategoryBlog = () => {
     const loadData = useLoaderData();
     const [categoryNews, setCategoryNews] = useState([])
 
-    console.log('category Id:', id, 'Data Load', loadData );
+    console.log('category Id:', id, 'Data Load', loadData);
 
-    useEffect( () => {
-        const filterCategory = loadData.filter( news => news.category_id == id);
-        // console.log('single category news', filterCategory);
-        setCategoryNews(filterCategory);
+    useEffect(() => {
+        if (id == '0') {
+            setCategoryNews(loadData);
+        } else if (id == '1') {
+            const filterNews = loadData.filter((news) => news.is_today_pick == true)
+            setCategoryNews(filterNews)
+        } else {
+            const filterCategory = loadData.filter(news => news.category_id == id);
+            console.log("Filter Category News", filterCategory);
+            setCategoryNews(filterCategory);
+        }
+
+
+        // else {
+        //     const filterCategory = loadData.filter(news => news.category_id == id);
+        //     console.log('single category news', filterCategory);
+        //     setCategoryNews(filterCategory);
+        // }
+
+
     }, [id, loadData])
 
 
     return (
         <div>
-            <h1>News Id {id}</h1>
             <section>
                 {
-                    categoryNews.map( news => <NewsCard key={news.id} news={news} />)
+                    categoryNews.map(news => <NewsCard key={news.id} news={news} />)
                 }
             </section>
         </div>

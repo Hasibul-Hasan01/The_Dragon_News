@@ -5,6 +5,8 @@ import SocialLog from '../Components/Auth/SocialLog/SocialLog';
 import Navbar from '../Components/Navbar/Navbar';
 import SocialMedia from '../Components/SocialMedia/SocialMedia';
 import CategoriesBtn from '../Components/CategoriesBtn/CategoriesBtn';
+import QZone from '../Components/QZone/QZone';
+
 
 const Root = () => {
     return (
@@ -27,6 +29,7 @@ const Root = () => {
                     <h1 className="font-bold">Login With</h1>
                     <SocialLog />
                     <SocialMedia />
+                    <QZone />
                 </section>
             </div>
         </div>

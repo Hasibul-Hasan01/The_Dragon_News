@@ -1,15 +1,17 @@
 import { CiBookmarkPlus } from "react-icons/ci";
 import { CiShare2 } from "react-icons/ci";
 import { IoMdEye } from "react-icons/io";
+import { NavLink } from "react-router";
 
 
 
 
 const NewsCard = ({ news }) => {
     const { author, title, thumbnail_url, details, rating, total_view } = news;
+    const formateDate = new Date(author.published_date).toLocaleDateString()
     return (
         <div className="w-[524px] border-base-200 border-2 mt-5">
-            <header className="flex justify-between items-center bg-base-300 overflow-hidden">
+            <header className="flex justify-between items-center bg-base-200 overflow-hidden">
                 <div className="flex items-center px-5 h-[80px]">
                     <div className="avatar mr-3">
                         <div className="size-13 rounded-full">
@@ -18,7 +20,7 @@ const NewsCard = ({ news }) => {
                     </div>
                     <div>
                         <h1 className="">{author.name}</h1>
-                        <h1>{author.published_date}</h1>
+                        <h1>{formateDate}</h1>
                     </div>
                 </div>
                 <div className="flex px-5">
@@ -33,7 +35,17 @@ const NewsCard = ({ news }) => {
                 <img className="rounded-lg w-[500px]" src={thumbnail_url} alt="Thumbnail-Image" />
             </section>
             <section className="px-3">
-                <p>{details}</p>
+               
+                {details.length > 150 ? (
+                    <>
+                    {details.slice(0, 150)}...
+                    <span>
+                        <NavLink className="text-red-700">Read More</NavLink>
+                    </span>
+                    </>
+                ) : (
+                    details
+                )}
             </section>
             <div className="flex w-full px-3 flex-col">
                 <div className="divider"></div>
