@@ -12,10 +12,13 @@ const CategoryBlog = () => {
     useEffect(() => {
         if (id == '0') {
             setCategoryNews(loadData);
-        } else if (id == '1') {
+        } 
+        else if (id == '1') {
             const filterNews = loadData.filter((news) => news.is_today_pick == true)
+            console.log('Filter news by ID', filterNews);
             setCategoryNews(filterNews)
-        } else {
+        } 
+        else {
             const filterCategory = loadData.filter(news => news.category_id == id);
             console.log("Filter Category News", filterCategory);
             setCategoryNews(filterCategory);

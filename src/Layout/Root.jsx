@@ -18,7 +18,7 @@ const Root = () => {
                 <Navbar />
             </section>
             <div className="grid grid-cols-12 py-4 gap-2">
-                <section className="left-nav col-span-3">
+                <section className="left-nav col-span-3 sticky top-0 h-fit">
                     <h1 className="font-bold">All Caterogy</h1>
                     <CategoriesBtn />
                 </section>
@@ -26,7 +26,7 @@ const Root = () => {
                     <h1 className="font-bold">Dragon News Home</h1>
                     <Outlet />
                 </section>
-                <section className="right-nav col-span-3">
+                <section className="right-nav col-span-3 sticky top-0 h-fit">
                     <h1 className="font-bold">Login With</h1>
                     <SocialLog />
                     <SocialMedia />

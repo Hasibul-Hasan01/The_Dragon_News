@@ -2,6 +2,7 @@ import { use } from "react";
 import { NavLink } from "react-router";
 
 const categoryNews = fetch("/categories.json").then((res) => res.json());
+// console.log(categoryNews);
 
 const CategoriesBtn = () => {
     const categoryBtn = use(categoryNews);
